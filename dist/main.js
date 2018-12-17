@@ -86,14 +86,75 @@
 /************************************************************************/
 /******/ ({
 
+/***/ "./src/components/button.js":
+/*!**********************************!*\
+  !*** ./src/components/button.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst loadButton = (bId) => {\n    const button = document.createElement('button');\n    button.classList.add('button');\n    button.id = bId;\n\n    return button;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (loadButton);\n\n//# sourceURL=webpack:///./src/components/button.js?");
+
+/***/ }),
+
+/***/ "./src/components/iconBtn.js":
+/*!***********************************!*\
+  !*** ./src/components/iconBtn.js ***!
+  \***********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _button_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./button.js */ \"./src/components/button.js\");\n\n\nconst loadIconBtn = (bId, faIcon) => {\n    const icon = document.createElement('i');\n    icon.setAttribute('class', `fa fa-${faIcon}`);\n    icon.setAttribute('aria-hidden', 'true')\n\n    const button = Object(_button_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])(bId);\n    button.appendChild(icon);\n\n    return button;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (loadIconBtn);\n\n//# sourceURL=webpack:///./src/components/iconBtn.js?");
+
+/***/ }),
+
+/***/ "./src/components/nav.js":
+/*!*******************************!*\
+  !*** ./src/components/nav.js ***!
+  \*******************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst loadNav = () => {\n    const nav = document.createElement('div');\n    nav.classList.add('topnav');\n\n\n    return nav;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (loadNav);\n\n//# sourceURL=webpack:///./src/components/nav.js?");
+
+/***/ }),
+
+/***/ "./src/components/panelContainer.js":
+/*!******************************************!*\
+  !*** ./src/components/panelContainer.js ***!
+  \******************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst loadPanelContainer = () => {\n    const panelContainer = document.createElement('div');\n    panelContainer.classList.add('panel-container');\n\n    return panelContainer;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (loadPanelContainer);\n\n//# sourceURL=webpack:///./src/components/panelContainer.js?");
+
+/***/ }),
+
+/***/ "./src/forms/addProjectForm.js":
+/*!*************************************!*\
+  !*** ./src/forms/addProjectForm.js ***!
+  \*************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\nconst loadAddProjectForm = () => {\n    const addProject = document.createElement('form');\n    addProject.classList.add('add-project-form');\n\n    addProject.innerHTML =\n        '<input type=\"text\" placeholder=\"Project Name\" class=\"name\" required>' +\n        '<input type=\"submit\" value=\"Submit\">';\n\n    return addProject;\n}\n\n/* harmony default export */ __webpack_exports__[\"default\"] = (loadAddProjectForm);\n\n//# sourceURL=webpack:///./src/forms/addProjectForm.js?");
+
+/***/ }),
+
 /***/ "./src/index.js":
 /*!**********************!*\
   !*** ./src/index.js ***!
   \**********************/
-/*! no static exports found */
-/***/ (function(module, exports) {
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
 
-eval("console.log('Setup succesful!');\n\n//# sourceURL=webpack:///./src/index.js?");
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _components_nav_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./components/nav.js */ \"./src/components/nav.js\");\n/* harmony import */ var _components_iconBtn_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./components/iconBtn.js */ \"./src/components/iconBtn.js\");\n/* harmony import */ var _components_panelContainer_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./components/panelContainer.js */ \"./src/components/panelContainer.js\");\n/* harmony import */ var _forms_addProjectForm_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./forms/addProjectForm.js */ \"./src/forms/addProjectForm.js\");\n\n\n\n\n\nconst content = document.querySelector('#content');\n\n//configure \"button nav\" and \"panel container\" elements\nconst nav = Object(_components_nav_js__WEBPACK_IMPORTED_MODULE_0__[\"default\"])();\nconst panelContainer = Object(_components_panelContainer_js__WEBPACK_IMPORTED_MODULE_2__[\"default\"])();\n\nconst btnLayout = Object(_components_iconBtn_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('layout', 'list-ul');\nconst btnColor = Object(_components_iconBtn_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('color', 'lightbulb-o');\nconst btnAddProject = Object(_components_iconBtn_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"])('add', 'plus');\n\nnav.appendChild(btnLayout);\nnav.appendChild(btnColor);\nnav.appendChild(btnAddProject);\n\ncontent.appendChild(nav);\ncontent.appendChild(panelContainer);\n\n//\"add project\" script\nconst addProjectForm = Object(_forms_addProjectForm_js__WEBPACK_IMPORTED_MODULE_3__[\"default\"])();\ndocument.querySelector('.add-project-form').onsubmit = () => {\n    const name = document.querySelector('.name').value;\n    \n};\n\n//# sourceURL=webpack:///./src/index.js?");
 
 /***/ })
 
