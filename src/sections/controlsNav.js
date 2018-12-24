@@ -1,5 +1,5 @@
 import loadIconBtn from '../components/iconBtn.js';
-import {showForm, hideForm} from '../forms/formFunctions.js'
+import { showForm, hideForm } from '../forms/formFunctions.js'
 
 const loadControlsNav = () => {
     //create nav to hold buttons

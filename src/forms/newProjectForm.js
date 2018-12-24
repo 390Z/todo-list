@@ -1,5 +1,5 @@
 import loadIconBtn from '../components/iconBtn.js';
-import {hideForm, submitForm} from '../forms/formFunctions.js'
+import { hideForm, submitForm } from '../forms/formFunctions.js'
 
 const loadNewProjectForm = () => {
     const bg = document.createElement('div');
@@ -8,11 +8,14 @@ const loadNewProjectForm = () => {
     const panel = document.createElement('div');
     panel.classList.add('npf');
     const panelContents = document.createElement('div');
+    panelContents.classList.add('npf-contents');
 
-    //construct header
+    // Header
     const panelHeader = document.createElement('div');
+    panelHeader.classList.add('npf-header');
 
     const title = document.createElement('div');
+    title.classList.add('npf-title');
     const titleText = document.createTextNode('New Project');
     title.appendChild(titleText);
 
@@ -22,7 +25,7 @@ const loadNewProjectForm = () => {
     panelHeader.appendChild(title);
     panelHeader.appendChild(btnX);
 
-    //construct form input
+    // Form input
     const inputPN = document.createElement('input');
     inputPN.classList.add('pc-sect', 'input-project-name');
     inputPN.setAttribute('type', 'text');
@@ -30,14 +33,14 @@ const loadNewProjectForm = () => {
     inputPN.required = true;
     panelContents.appendChild(inputPN);
 
-    //construct submit button
+    // Submit button
     const btnSubmit = loadIconBtn('submit', 'check');
     btnSubmit.classList.add('pc-sect');
     btnSubmit.addEventListener('click', hideForm);
     btnSubmit.addEventListener('click', submitForm);
     panelContents.appendChild(btnSubmit);
 
-    //append parts to panel, panel to bg
+    // Append parts to panel, panel to bg
     panel.appendChild(panelHeader);
     panel.appendChild(panelContents);
     bg.appendChild(panel);
