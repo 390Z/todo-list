@@ -1,6 +1,6 @@
 .controls-nav {
     max-width: 200px;
-    margin: 0 auto;
+    margin: 30px auto;
     /* background-color: red; */
     overflow: hidden;
     display: grid;
@@ -33,36 +33,70 @@
 }
 
 .npf {
+    display: grid;    
+    grid-row-gap: 20px;
     position: relative;
-    background-color: red;
+    background-color: #f2f2f2;
     margin: auto;
     padding: 10px;
     border: 1px solid #888;
     width: 300px;
-    height: 300px;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
-    -webkit-animation-name: animatetop;
+    -webkit-animation-name: npfdown;
     -webkit-animation-duration: 0.4s;
-    animation-name: animatetop;
-    animation-duration: 0.4s
+    animation-name: npfdown;
+    animation-duration: 0.4s;
+    font-family: 'Roboto', sans-serif;
 }
 
-@-webkit-keyframes animatetop {
+@-webkit-keyframes npfdown {
     from {top:-300px; opacity:0} 
     to {top:0; opacity:1}
 }
   
-@keyframes animatetop {
+@keyframes npfdown {
     from {top:-300px; opacity:0}
     to {top:0; opacity:1}
 }
 
-
-
-#cancel {
-    display: block;
-    float: right;
+.npf-title {
+    display: grid;
 }
+
+.npf-fields {
+    display: grid;
+    height: 40px;
+}
+
+.npf-fields input {
+    padding: 10px;
+    text-align: center;
+}
+
+.npf-buttons {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    height: 40px;
+}
+
+.npf-buttons #add-project {
+    background-color: #4caf50;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-right: 5px;
+}
+
+.npf-buttons #cancel {
+    background-color: #ff0000;
+    color: #fff;
+    border: none;
+    border-radius: 2px;
+    margin-left: 5px;
+}
+
+
+
 
 
 /* Project Container & Project Pannels */
@@ -72,12 +106,12 @@
     grid-gap: 20px;
     width: 620px;
     margin: 0 auto;
-    padding-top: 20px;
     justify-content: center;
 }
 
 .project-panel {
-    display: flex;
+    display: grid;
+    grid-template-rows: 20px auto 20px;
     align-items: center;
     text-align: center;
     width: 190px;
@@ -90,8 +124,19 @@
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
+.panel-buttons {
+    text-align: right;
+}
+
+#options {
+    color: #fff;
+    background-color: transparent;
+    border: none;
+}
+
 .project-name {
     padding: 0 30px;
     font-family: 'Permanent Marker', cursive;
     font-size: 28px;
+    margin: 0 auto;
 }

@@ -1,49 +1,53 @@
-import loadIconBtn from '../components/iconBtn.js';
+import loadButton from '../components/button.js';
 import { hideForm, submitForm } from '../forms/formFunctions.js'
 
 const loadNewProjectForm = () => {
+    // Modal setup and npf sections
     const bg = document.createElement('div');
     bg.classList.add('npf-bg');
     
-    const panel = document.createElement('div');
-    panel.classList.add('npf');
-    const panelContents = document.createElement('div');
-    panelContents.classList.add('npf-contents');
+    const npf = document.createElement('div');
+    const npfHeader = document.createElement('div');
+    const npfFields = document.createElement('div');
+    const npfButtons = document.createElement('div');
 
-    // Header
-    const panelHeader = document.createElement('div');
-    panelHeader.classList.add('npf-header');
+    npf.classList.add('npf');
+    npfHeader.classList.add('npf-header');
+    npfFields.classList.add('npf-fields');
+    npfButtons.classList.add('npf-buttons');
 
+    // npf Header
     const title = document.createElement('div');
-    title.classList.add('npf-title');
     const titleText = document.createTextNode('New Project');
+    title.classList.add('npf-title');
     title.appendChild(titleText);
 
-    const btnX = loadIconBtn('cancel', 'times');
-    btnX.addEventListener('click', hideForm);
+    npfHeader.appendChild(title);
 
-    panelHeader.appendChild(title);
-    panelHeader.appendChild(btnX);
+    // npf Fields
+    const name = document.createElement('input');
+    name.classList.add('npf-name');
+    name.setAttribute('type', 'text');
+    name.setAttribute('placeholder', 'Project Name');
 
-    // Form input
-    const inputPN = document.createElement('input');
-    inputPN.classList.add('pc-sect', 'input-project-name');
-    inputPN.setAttribute('type', 'text');
-    inputPN.setAttribute('placeholder', 'Project Name');
-    inputPN.required = true;
-    panelContents.appendChild(inputPN);
+    npfFields.appendChild(name);
 
-    // Submit button
-    const btnSubmit = loadIconBtn('submit', 'check');
-    btnSubmit.classList.add('pc-sect');
+    // npf Buttons
+    const btnSubmit = loadButton('add-project', 'Add Project');
     btnSubmit.addEventListener('click', hideForm);
     btnSubmit.addEventListener('click', submitForm);
-    panelContents.appendChild(btnSubmit);
 
-    // Append parts to panel, panel to bg
-    panel.appendChild(panelHeader);
-    panel.appendChild(panelContents);
-    bg.appendChild(panel);
+    const btnCancel = loadButton('cancel', 'Cancel');
+    btnCancel.addEventListener('click', hideForm);
+
+    npfButtons.appendChild(btnSubmit);
+    npfButtons.appendChild(btnCancel);
+
+    // Append parts to npf, npf to bg
+    npf.appendChild(npfHeader);
+    npf.appendChild(npfFields);
+    npf.appendChild(npfButtons);
+    bg.appendChild(npf);
 
     return bg;
 }

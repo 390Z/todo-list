@@ -5,7 +5,7 @@ const loadIconBtn = (bId, faIcon) => {
     icon.setAttribute('class', `fa fa-${faIcon}`);
     icon.setAttribute('aria-hidden', 'true')
 
-    const button = loadButton(bId);
+    const button = loadButton(bId, '');
     button.appendChild(icon);
 
     return button;
