@@ -2,7 +2,7 @@ import loadButton from '../components/button.js';
 import { hideForm, submitForm } from '../forms/formFunctions.js'
 
 const loadNewProjectForm = () => {
-    // Modal setup and npf sections
+    // Modal setup and new project form (npf) sections
     const bg = document.createElement('div');
     bg.classList.add('npf-bg');
     
